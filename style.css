@@ -1,0 +1,42 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#background-wrapper, #canvas-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#background-wrapper {
+  z-index: 0;
+}
+
+#bg-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: auto; /* 背景可以點擊，iframe 可互動 */
+  opacity: 1;
+}
+
+#canvas-wrapper {
+  z-index: 1;
+  pointer-events: none; /* 浮層canvas不阻擋背景點擊 */
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  pointer-events: none; /* 浮層canvas不阻擋背景點擊 */
+}
